@@ -9,7 +9,7 @@ const Home = () => {
 
   const handleLogout = async () => {
     try {
-      await logout(); // Call the logout function
+      await logout(); // Call the logout function from AuthContext
       console.log('User logged out successfully');
     } catch (error) {
       console.error('Error logging out:', error);
@@ -17,7 +17,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-900 min-h-screen flex flex-col justify-center items-center p-6">
+    <div className="bg-gradient-to-b from-yellow-500 to-red-500 min-h-screen flex flex-col justify-center items-center p-6">
       <h2 className="text-4xl font-bold mb-6 text-center text-blue-700 dark:text-blue-300">
         Welcome to Mindful Support
       </h2>
@@ -27,7 +27,7 @@ const Home = () => {
 
       {currentUser && (
         <button
-          onClick={handleLogout}
+          onClick={handleLogout} // Handle logout on click
           className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow hover:bg-red-700 transition-colors duration-200"
         >
           Logout
